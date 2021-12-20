@@ -1,0 +1,63 @@
+{
+    "Correctes": [
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        }
+    ],
+    "Erronis": [],
+    "Atrasats": [
+        {
+            "Status": "Atrasats"
+        }
+    ],
+    "Advertencies": [
+        {
+            "Status": "Warning"
+        }
+    ]
+}

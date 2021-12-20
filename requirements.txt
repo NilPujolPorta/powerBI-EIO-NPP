@@ -1,0 +1,9 @@
+requests
+openpyxl
+pyotp
+selenium
+opencv-python
+pytesseract
+pywinauto
+keyboard
+python -m pip install mysql-connector-python
