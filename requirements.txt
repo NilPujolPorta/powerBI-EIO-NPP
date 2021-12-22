@@ -7,3 +7,4 @@ pytesseract
 pywinauto
 keyboard
 python -m pip install mysql-connector-python
+pyyaml
