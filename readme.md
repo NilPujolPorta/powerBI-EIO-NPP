@@ -4,10 +4,10 @@
 - S'han de tenir les carpetes de les altres apis en la mateixa carpeta a on esta la carpeta d'aquest programa, per exemple:
 ```
 ParentFolder
-  L powerBI
-  L Synology_API-NPP
-  L CatBackup-API
-  L PandoraMFS_API-NPP
+  ├── powerBI
+  ├── Synology_API-NPP
+  ├── CatBackup-API
+  ├── PandoraMFS_API-NPP
 ```
 
 ### Funcions de cada Fitxer:
