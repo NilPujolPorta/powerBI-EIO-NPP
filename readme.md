@@ -8,6 +8,7 @@ ParentFolder
   ├── Synology_API-NPP
   ├── CatBackup-API
   ├── PandoraMFS_API-NPP
+  ├── PowerBI_refresher-NPP
 ```
 
 ### Funcions de cada Fitxer:

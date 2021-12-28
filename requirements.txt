@@ -1,13 +1,13 @@
+argparse
 requests
 openpyxl
 pyotp
 selenium
 opencv-python
 pytesseract
-pywinauto
-keyboard
 mysql-connector-python
 pyyaml
 Synology_API-NPP
 PandoraFMS_API-NPP
 CatbackupAPI-NPP
+PowerBI_refresher-NPP

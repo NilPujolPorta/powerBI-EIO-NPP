@@ -13,5 +13,5 @@ copy /b/v/y/z ..\SynologyAPI-NPP\dadesSynology.json .
 taskkill /F /IM PBIDesktop.exe
 ping 192.0.2.2 -n 1 -w 2000 > nul
 
-cd Refresh
+cd ../PowerBI_refresher-NPP/refresher
 refresh.cpython-39.pyc -q
