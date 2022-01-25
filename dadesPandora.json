@@ -13,6 +13,24 @@
                         "status": "Correcte",
                         "id": "2",
                         "CodiGrup": "2"
+                    },
+                    {
+                        "nom": "EIODOM",
+                        "status": "Warning",
+                        "id": "27",
+                        "CodiGrup": "2"
+                    },
+                    {
+                        "nom": "EIOHOST",
+                        "status": "Warning",
+                        "id": "28",
+                        "CodiGrup": "2"
+                    },
+                    {
+                        "nom": "EIOCRM",
+                        "status": "Warning",
+                        "id": "29",
+                        "CodiGrup": "2"
                     }
                 ]
             },
@@ -42,7 +60,7 @@
                     },
                     {
                         "nom": "[SPLENDID_FOODS] SFDC01",
-                        "status": "Correcte",
+                        "status": "ERROR",
                         "id": "4",
                         "CodiGrup": "15"
                     },
@@ -111,7 +129,7 @@
                     },
                     {
                         "nom": "[TRESSERRES] server251",
-                        "status": "ERROR",
+                        "status": "Correcte",
                         "id": "16",
                         "CodiGrup": "17"
                     },
@@ -135,9 +153,21 @@
                 "grupID": "20",
                 "OLSER": [
                     {
-                        "nom": "[OLSER]SRVSQL",
-                        "status": "Desconegut/desconectat",
-                        "id": "25",
+                        "nom": "[OLSER] SRVHOST",
+                        "status": "Correcte",
+                        "id": "30",
+                        "CodiGrup": "20"
+                    },
+                    {
+                        "nom": "[OLSER] SRVDOM",
+                        "status": "codi desconegut",
+                        "id": "31",
+                        "CodiGrup": "20"
+                    },
+                    {
+                        "nom": "[OLSER] SRVSQL",
+                        "status": "Warning",
+                        "id": "32",
                         "CodiGrup": "20"
                     }
                 ]

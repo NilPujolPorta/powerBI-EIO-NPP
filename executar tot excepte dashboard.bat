@@ -1,11 +1,11 @@
-cd ../PandoraFMS_API-NPP
+cd ../PandoraFMS_API-NPP/PandoraAPI
 PandoraFMS_API.cpython-39.pyc -q
-cd ../CatbackupAPI-NPP
+cd ../../CatbackupAPI-NPP\CatBackupAPI\
 CatbackupAPI-NPP.cpython-39.pyc -q
-cd ../SynologyAPI-NPP
-synology_API.cpython-39.pyc -q
-cd ../powerBI
+cd ../../SynologyAPI-NPP\SynologyAPI\
+synology_API.cpython-39.pyc -qe
+cd ../../powerBI
 
-copy /b/v/y/z ..\CatbackupAPI-NPP\dadesCatBackup.json .
+copy /b/v/y/z ..\CatbackupAPI-NPP\CatBackupAPI\dadesCatBackup.json .
 copy /b/v/y/z ..\PandoraFMS_API-NPP\dadesPandora.json .
-copy /b/v/y/z ..\SynologyAPI-NPP\dadesSynology.json .
+copy /b/v/y/z ..\SynologyAPI-NPP\SynologyAPI\dadesSynology.json .
