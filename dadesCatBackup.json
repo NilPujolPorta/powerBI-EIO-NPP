@@ -62,13 +62,16 @@
         },
         {
             "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
+        },
+        {
+            "Status": "Correctes"
         }
     ],
     "Erronis": [],
     "Atrasats": [
-        {
-            "Status": "Atrasats"
-        },
         {
             "Status": "Atrasats"
         }

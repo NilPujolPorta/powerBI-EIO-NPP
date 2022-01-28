@@ -72,7 +72,7 @@
                     },
                     {
                         "nom": "[SPLENDID_FOODS] SFBKP01",
-                        "status": "Desconegut/desconectat",
+                        "status": "ERROR",
                         "id": "6",
                         "CodiGrup": "15"
                     },
