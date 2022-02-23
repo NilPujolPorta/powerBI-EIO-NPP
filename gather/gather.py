@@ -4,8 +4,9 @@ from PandoraAPI import PandoraFMS_API
 from HyperbackupAPI2 import HyperbackupAPI2_NPP
 from refresher import refresher
 import argparse
+import wget
 
-__version__= "0.2.2"
+__version__= "0.2.3"
 def main(args=None):
     
     parser = argparse.ArgumentParser(description='Serveix per actualitzar dashboard de PowerBI desktop localment.')
@@ -19,7 +20,8 @@ def main(args=None):
     rutaJSONCatbackup ="C:\\ns/dadesCatbackup.json"
     rutaJSONPandora ="C:\\ns/dadesPandora.json"
     rutaJSONHyperbackup2="C:\\ns/dadesHyperBackup2.json"
-
+    rutaJSONLlegenda="C:\\ns/llegendaPowerBI.json"
+    wget.download("https://github.com/NilPujolPorta/powerBI-EIO-NPP/blob/master/llegendaPowerBI.json?raw=true", rutaJSONLlegenda)
     rutaChromePortable=""
 
     rutaPBIX="C:\\ns/apis.pbix"

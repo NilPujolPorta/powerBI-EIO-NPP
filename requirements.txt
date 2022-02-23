@@ -11,3 +11,4 @@ Synology_API-NPP
 PandoraFMS_API-NPP
 CatbackupAPI-NPP
 PowerBI_refresher-NPP
+HyperbackupAPI2-NPP

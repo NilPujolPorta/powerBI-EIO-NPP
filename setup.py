@@ -28,11 +28,12 @@ setup(name='powerBI-EIO-NPP',
           'argparse',
           "setuptools>=42",
           "wheel",
-          "CatbackupAPI-NPP",
-          "HyperbackupAPI2-NPP",
-          "PandoraFMS-API",
-          "SynologyAPI-NPP",
-          "PowerBI-refresher-NPP"
+          "CatbackupAPI-NPP>=1.5.6",
+          "HyperbackupAPI2-NPP>=0.1.3",
+          "PandoraFMS-API>=1.3.5",
+          "SynologyAPI-NPP>=1.7.5",
+          "PowerBI-refresher-NPP>=1.1.8",
+          "wget"
       ],
 	  entry_points = {
         "console_scripts": ['powerBI-EIO-NPP = gather.gather:main']
