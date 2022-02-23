@@ -1,2 +1,0 @@
-https://github.com/dubravcik/pbixrefresher-python
-https://stackoverflow.com/questions/59946982/is-there-a-workaround-for-power-bi-desktop-to-automatically-refresh-data-without
