@@ -1,4 +1,5 @@
+*.json
+Documentacio\ temporal/*
+dadesCatBackup.json
 dadesPandora.json
 dadesSynology.json
-dadesCatBackup.json
-Documentacio\ temporal/*
