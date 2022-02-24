@@ -1,3 +1,6 @@
+from ast import If
+import os.path
+
 from pickle import NONE
 from SynologyAPI import synology_API
 from catbackupAPI import CatbackupAPI_NPP
@@ -7,7 +10,7 @@ from refresher import refresher
 import argparse
 import wget
 
-__version__= "0.2.4"
+__version__= "0.2.5"
 def main(args=None):
     
     parser = argparse.ArgumentParser(description='Serveix per actualitzar dashboard de PowerBI desktop localment.')
@@ -16,27 +19,36 @@ def main(args=None):
     parser.add_argument('-v', '--versio', help='Mostra la versio', action='version', version='refresh-PowerBI v'+__version__)
     args = parser.parse_args(args)
 
-    rutaExcelPandora = "C:\\ns/excelPandora.xlsx"
-    rutaExcelSynology = "C:\\ns/excelSynology.xlsx"
-    rutaJSONSynology = "C:\\ns/dadesSynology.json"
-    rutaJSONCatbackup ="C:\\ns/dadesCatbackup.json"
-    rutaJSONPandora ="C:\\ns/dadesPandora.json"
-    rutaJSONHyperbackup2="C:\\ns/dadesHyperBackup2.json"
-    rutaJSONLlegenda="C:\\ns/llegendaPowerBI.json"
-    wget.download("https://github.com/NilPujolPorta/powerBI-EIO-NPP/blob/master/llegendaPowerBI.json?raw=true", rutaJSONLlegenda)
+    rutaExcelPandora = "C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\excelPandora.xlsx"
+    rutaExcelSynology = "C:\\Users\\npujol\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\excelSynology.xlsx"
+    rutaJSONSynology = "C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesSynology.json"
+    rutaJSONCatbackup ="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesCatbackup.json"
+    rutaJSONPandora ="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesPandora.json"
+    rutaJSONHyperbackup2="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesHyperBackup2.json"
+    rutaJSONLlegenda="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\General\\Drive\\utilitats\\APIs\\powerBI\\llegendaPowerBI.json"
+    if not(os.path.isfile(rutaJSONLlegenda)):
+        wget.download("https://github.com/NilPujolPorta/powerBI-EIO-NPP/blob/master/llegendaPowerBI.json?raw=true", rutaJSONLlegenda)
     rutaChromePortable=""
 
-    rutaPBIX="C:\\ns/apis.pbix"
-    if args.quiet:
+    rutaPBIX="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\apis.pbix"
+    if not(args.quiet):
         PandoraFMS_API.main(['-q','-e','-f',rutaExcelPandora,'--json-file',rutaJSONPandora])
-        CatbackupAPI_NPP.main(['-q','--json-file',rutaJSONCatbackup,'--portable-chrome-path', args.portable_chrome_path])
         synology_API.main(['-q','-e','--json-file',rutaJSONSynology,'-f',rutaExcelSynology])
-        HyperbackupAPI2_NPP.main(['-q','--json-file',rutaJSONHyperbackup2,'--portable-chrome-path', args.portable_chrome_path])
+        if args.portable_chrome_path != NONE:
+            CatbackupAPI_NPP.main(['-q','--json-file',rutaJSONCatbackup,'--portable-chrome-path', args.portable_chrome_path])
+            HyperbackupAPI2_NPP.main(['-q','--json-file',rutaJSONHyperbackup2,'--portable-chrome-path', args.portable_chrome_path])
+        else:
+            CatbackupAPI_NPP.main(['-q','--json-file',rutaJSONCatbackup])
+            HyperbackupAPI2_NPP.main(['-q','--json-file',rutaJSONHyperbackup2])
     else:
         PandoraFMS_API.main(['-e','-f',rutaExcelPandora,'--json-file',rutaJSONPandora])
-        CatbackupAPI_NPP.main(['--json-file',rutaJSONCatbackup,'--portable-chrome-path', args.portable_chrome_path])
         synology_API.main(['-e','--json-file',rutaJSONSynology,'-f',rutaExcelSynology])
-        HyperbackupAPI2_NPP.main(['--json-file',rutaJSONHyperbackup2,'--portable-chrome-path', args.portable_chrome_path])
+        if args.portable_chrome_path != NONE:
+            CatbackupAPI_NPP.main(['--json-file',rutaJSONCatbackup,'--portable-chrome-path', args.portable_chrome_path])
+            HyperbackupAPI2_NPP.main(['--json-file',rutaJSONHyperbackup2,'--portable-chrome-path', args.portable_chrome_path])
+        else:
+            CatbackupAPI_NPP.main(['--json-file',rutaJSONCatbackup])
+            HyperbackupAPI2_NPP.main(['--json-file',rutaJSONHyperbackup2])
     try:
         refresher.main(['-f',rutaPBIX])
     except:

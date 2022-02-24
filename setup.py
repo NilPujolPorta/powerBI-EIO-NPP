@@ -29,10 +29,10 @@ setup(name='powerBI-EIO-NPP',
           "setuptools>=42",
           "wheel",
           "CatbackupAPI-NPP>=1.5.6",
-          "HyperbackupAPI2-NPP>=0.1.3",
+          "HyperbackupAPI2-NPP>=0.1.4",
           "PandoraFMS-API>=1.3.5",
           "SynologyAPI-NPP>=1.7.5",
-          "PowerBI-refresher-NPP>=1.1.8",
+          "PowerBI-refresher-NPP>=1.1.9",
           "wget"
       ],
 	  entry_points = {
