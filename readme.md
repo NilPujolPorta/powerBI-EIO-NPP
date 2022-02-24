@@ -35,12 +35,14 @@
 ### Opcions
 
 ```
-usage: gather.py [-h] [-q] [-v]
+usage: gather.py [-h] [--portable-chrome-path RUTA] [-q] [-v]
 
 Serveix per actualitzar dashboard de PowerBI desktop localment.
 
 optional arguments:
-  -h, --help    show this help message and exit
-  -q, --quiet   Nomes mostra els errors i el missatge de acabada per pantalla.
-  -v, --versio  Mostra la versio
+  -h, --help            show this help message and exit
+  --portable-chrome-path RUTA
+                        La ruta del executable de chrome
+  -q, --quiet           Nomes mostra els errors i el missatge de acabada per pantalla.
+  -v, --versio          Mostra la versio
 ```
