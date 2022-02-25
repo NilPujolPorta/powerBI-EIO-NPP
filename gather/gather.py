@@ -10,7 +10,7 @@ from refresher import refresher
 import argparse
 import wget
 
-__version__= "0.2.5"
+__version__= "0.2.6"
 def main(args=None):
     
     parser = argparse.ArgumentParser(description='Serveix per actualitzar dashboard de PowerBI desktop localment.')
@@ -19,18 +19,19 @@ def main(args=None):
     parser.add_argument('-v', '--versio', help='Mostra la versio', action='version', version='refresh-PowerBI v'+__version__)
     args = parser.parse_args(args)
 
-    rutaExcelPandora = "C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\excelPandora.xlsx"
-    rutaExcelSynology = "C:\\Users\\npujol\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\excelSynology.xlsx"
-    rutaJSONSynology = "C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesSynology.json"
-    rutaJSONCatbackup ="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesCatbackup.json"
-    rutaJSONPandora ="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesPandora.json"
-    rutaJSONHyperbackup2="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesHyperBackup2.json"
-    rutaJSONLlegenda="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\General\\Drive\\utilitats\\APIs\\powerBI\\llegendaPowerBI.json"
+    rutaExcelPandora = "" # ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\excelPandora.xlsx
+    rutaExcelSynology = ""# ex: C:\\Users\\npujol\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\excelSynology.xlsx
+    rutaJSONSynology = ""# ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesSynology.json
+    rutaJSONCatbackup =""# ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesCatbackup.json
+    rutaJSONPandora ="" # ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesPandora.json
+    rutaJSONHyperbackup2=""# ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\dadesHyperBackup2.json
+    rutaJSONLlegenda=""# ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\General\\Drive\\utilitats\\APIs\\powerBI\\llegendaPowerBI.json
+    rutaPBIX=""# ex: C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\apis.pbix
+
+    
     if not(os.path.isfile(rutaJSONLlegenda)):
         wget.download("https://github.com/NilPujolPorta/powerBI-EIO-NPP/blob/master/llegendaPowerBI.json?raw=true", rutaJSONLlegenda)
-    rutaChromePortable=""
 
-    rutaPBIX="C:\\Users\\npujol\\eio.cat\\Eio-sistemes - Documentos\\General\\Drive\\utilitats\\APIs\\powerBI\\apis.pbix"
     if not(args.quiet):
         PandoraFMS_API.main(['-q','-e','-f',rutaExcelPandora,'--json-file',rutaJSONPandora])
         synology_API.main(['-q','-e','--json-file',rutaJSONSynology,'-f',rutaExcelSynology])
