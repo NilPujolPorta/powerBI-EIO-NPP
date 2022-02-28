@@ -10,7 +10,7 @@ from refresher import refresher
 import argparse
 import wget
 
-__version__= "0.2.6"
+__version__= "0.2.6.1"#el .1 es perque he actualitzat depencencies
 def main(args=None):
     
     parser = argparse.ArgumentParser(description='Serveix per actualitzar dashboard de PowerBI desktop localment.')
